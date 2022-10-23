@@ -86,7 +86,6 @@ in files
 node [Admin] as admin
 node [companies] as companies
 
-
 database PostgreSQL
 node Keycloak 
 
@@ -95,9 +94,9 @@ node Keycloak
 [companies] <..> PostgreSQL
 [companies] <..> admin
 
-
 @enduml
 ```
+![system_scheme](./doc/system_scheme.png)
 
 ## Tests
 
@@ -277,7 +276,7 @@ Result: 200 OK
 
 See logs and parameters of each microservice we could via [Portainer](http://localhost:9000/#!/home):
 
-![image info](./doc/portainer.png)
+![manage_containers](./doc/portainer.png)
 
 ## Swagger API-documentation
 
