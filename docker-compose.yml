@@ -1,0 +1,78 @@
+version: '3.9'
+
+networks:
+  keycloak-net:
+
+volumes:
+  keycloak-db:
+
+services:
+  keycloak-db:
+    build:
+      context: ./deploy
+      dockerfile: db.Dockerfile
+    container_name: keycloak-db
+    user: root  # needed because windows hates me
+    volumes:
+      - keycloak-db:/var/lib/postgresql/data
+    networks:
+      - keycloak-net
+    ports:
+      - "25432:5432"
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: password
+  keycloak:
+    image: jboss/keycloak:latest
+    container_name: keycloak
+    depends_on:
+      - keycloak-db
+    networks:
+      - keycloak-net
+    ports:
+      - "8403:8080"  # expose to host port 8403
+    environment:
+      DB_VENDOR: POSTGRES
+      DB_ADDR: keycloak-db
+      DB_PORT: 5432
+      DB_DATABASE: keycloak
+      DB_USER: keycloak
+      DB_PASSWORD: password
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+      JDBC_PARAMS: 'connectTimeout=60'
+      PROXY_ADDRESS_FORWARDING: 'true'
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  admin:
+   build:
+      context: ./admin
+      dockerfile: Dockerfile
+   container_name: admin
+   depends_on:
+     - keycloak-db
+     - keycloak
+   networks:
+     - keycloak-net
+   ports:
+     - "8400:8400"
+   extra_hosts:
+    - "host.docker.internal:host-gateway"
+
+  companies:
+   build:
+      context: ./companies
+      dockerfile: Dockerfile
+   container_name: companies
+   depends_on:
+     - keycloak-db
+     - keycloak
+     - admin
+   networks:
+     - keycloak-net
+   ports:
+     - "8405:8405"
+   extra_hosts:
+    - "host.docker.internal:host-gateway"

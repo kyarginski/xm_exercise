@@ -1,0 +1,179 @@
+{
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "swagger": "2.0",
+  "info": {
+    "description": "# Description of the REST API of the service for working with the Companies",
+    "title": "Service for working with the Companies"
+  },
+  "paths": {
+    "/ping": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "summary": "Health check.",
+        "operationId": "GetPing",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GenericMessage"
+            }
+          }
+        }
+      }
+    },
+    "/v1.0.0/companies": {
+      "post": {
+        "produces": [
+          "application/json"
+        ],
+        "summary": "Create record of company.",
+        "operationId": "CompanyInsert",
+        "parameters": [
+          {
+            "description": "parameters for company",
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Company"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Error"
+          }
+        }
+      },
+      "delete": {
+        "produces": [
+          "application/json"
+        ],
+        "summary": "Delete record of company.",
+        "operationId": "CompanyDelete",
+        "parameters": [
+          {
+            "type": "integer",
+            "description": "id of company",
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Company"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Error"
+          }
+        }
+      },
+      "patch": {
+        "produces": [
+          "application/json"
+        ],
+        "summary": "Update record of company.",
+        "operationId": "CompanyUpdate",
+        "parameters": [
+          {
+            "description": "parameters for company",
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Company"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Error"
+          }
+        }
+      }
+    },
+    "/v1.0.0/companies/:id": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "summary": "Get company by ID.",
+        "operationId": "GetCompanyById",
+        "parameters": [
+          {
+            "type": "integer",
+            "description": "id company",
+            "name": "id",
+            "in": "query",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Company"
+            }
+          },
+          "400": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/GenericMessage"
+            }
+          },
+          "404": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/GenericMessage"
+            }
+          },
+          "500": {
+            "description": "Internal Server error",
+            "schema": {
+              "$ref": "#/definitions/GenericMessage"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Companies": {
+      "description": "Companies",
+      "x-go-package": "companies/src/internal/model"
+    },
+    "Company": {
+      "description": "Company",
+      "x-go-package": "companies/src/internal/model"
+    },
+    "GenericMessage": {
+      "description": "GenericMessage is the default message that is generated",
+      "x-go-package": "companies/src/internal/model"
+    },
+    "GenericSimpleDictionary": {
+      "description": "GenericSimpleDictionary is the simple standard dictionary",
+      "x-go-package": "companies/src/internal/model"
+    },
+    "GenericToken": {
+      "description": "GenericToken is the message for get token7",
+      "x-go-package": "companies/src/internal/model"
+    }
+  }
+}

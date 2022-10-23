@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "525fd2fc-c0b2-408e-8d54-0bbfdb0defbd",
+		"name": "xm_exercise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2554852"
+	},
+	"item": [
+		{
+			"name": "admin ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8400/v1.0.0/ping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8400",
+					"path": [
+						"v1.0.0",
+						"ping"
+					]
+				},
+				"description": "Проверка работоспособности сервиса"
+			},
+			"response": []
+		},
+		{
+			"name": "companies ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8405/v1.0.0/ping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8405",
+					"path": [
+						"v1.0.0",
+						"ping"
+					]
+				},
+				"description": "Проверка работоспособности сервиса"
+			},
+			"response": []
+		},
+		{
+			"name": "companies BY ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICItVUtCQ1hlLVd6VE84OUk3MFlvZHN3ZnRmcFhhcmRaNG5qOERoUVUyY1Q0In0.eyJleHAiOjE2NjY0NTY5MDYsImlhdCI6MTY2NjQ1Njg0NiwianRpIjoiOWE3YmEwMWUtZjlhNi00M2Q3LWI3MDEtNTQ0ZjhkZTgxM2Y1IiwiaXNzIjoiaHR0cDovL2hvc3QuZG9ja2VyLmludGVybmFsOjg0MDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjcyZGE3ZjhhLTk0NzgtNDZjMy04YjAwLTMzNTdhYWVjZTM2YSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluIiwic2Vzc2lvbl9zdGF0ZSI6IjZkYzZlODE1LWMzY2YtNDJlMS1iNDhiLTQ0NjQ1MjU5Mjg1NSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiY29tcGFuaWVzIiwiZGVmYXVsdC1yb2xlcy1tYXN0ZXIiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiNmRjNmU4MTUtYzNjZi00MmUxLWI0OGItNDQ2NDUyNTkyODU1IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJtYW5hZ2VyIn0.WpIupQS8Ne5EEiZ9-8GmP5JbUxZxbXphOnUVkfAC9NrLtcvEIMd8NpCtL4REqI0Fm2ux5yqnM6EucyhqKWwDduUcB-nv4u-VOWhKjUvRwsPT3HY5d07JIILnWFeIX-zNrojqnbSUs2p_tFWcZd-PUU_GqO33AtN41I-AkozIYxgFCcor9SuAgdZhr0qEdAXBtt3jmIedzcijK-mTXbHJY5J1pYRnTKR6Z-VC_Wm2j9ot-OBrUq4P1JXS1W6KjeRva7mu2hzQ0Jq4tESZplvVhicviprIN3mk7Lygw_Z68LQzl1yMmyAZMtnOSRPgyGHqE1U3ebCyBK_vTjSRSwcE5g",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8405/v1.0.0/companies/e1da4d2a-520d-11ed-977a-0242ac130002",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8405",
+					"path": [
+						"v1.0.0",
+						"companies",
+						"e1da4d2a-520d-11ed-977a-0242ac130002"
+					]
+				},
+				"description": "Проверка работоспособности сервиса"
+			},
+			"response": []
+		},
+		{
+			"name": "admin login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":  \"manager\",\n    \"password\":  \"manager\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8400/v1.0.0/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8400",
+					"path": [
+						"v1.0.0",
+						"api",
+						"login"
+					]
+				},
+				"description": "Проверка работоспособности сервиса"
+			},
+			"response": []
+		},
+		{
+			"name": "company CREATE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "123",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Company 2\",\r\n    \"description\": \"The Second Company\",\r\n    \"amount\": 100,\r\n    \"registered\": \"false\",\r\n    \"type\": \"NonProfit\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8405/v1.0.0/companies/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8405",
+					"path": [
+						"v1.0.0",
+						"companies",
+						""
+					]
+				},
+				"description": "Проверка работоспособности сервиса"
+			},
+			"response": []
+		},
+		{
+			"name": "company UPDATE",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICItVUtCQ1hlLVd6VE84OUk3MFlvZHN3ZnRmcFhhcmRaNG5qOERoUVUyY1Q0In0.eyJleHAiOjE2NjY0NjUwNjUsImlhdCI6MTY2NjQ2NTAwNSwianRpIjoiYmVkYzNiM2MtM2I4OC00YjU2LTk2MGYtZGRkMGJhNzg0MGNkIiwiaXNzIjoiaHR0cDovL2hvc3QuZG9ja2VyLmludGVybmFsOjg0MDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjcyZGE3ZjhhLTk0NzgtNDZjMy04YjAwLTMzNTdhYWVjZTM2YSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluIiwic2Vzc2lvbl9zdGF0ZSI6ImVkYTE3OWJkLTk0ODMtNGJjOS05NDVjLTViOTU5NTA5YTQ5MSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiY29tcGFuaWVzIiwiZGVmYXVsdC1yb2xlcy1tYXN0ZXIiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiZWRhMTc5YmQtOTQ4My00YmM5LTk0NWMtNWI5NTk1MDlhNDkxIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJtYW5hZ2VyIn0.SYgekkrsC7uovx4bFbgr-DixSSr7UQgG9UFjFMoDuvFZm-c1OTljysUeO35SAfTYT2yE0dtdjacfuade0ehWR-bvrGp-6lG5C-VKfIty1sg9QfXDkzByUuXLr-YkYnds-a9bVZ_lLzCN3EI-Asbwsd_PoeClMA0VdMxSdQmWKBn3__X8pptfFTDDbI7Qz9IgBWHCBGbCcP-ZF3GVuT3YUUa5rZKBdOLtVcY2LCuv3LxSfRDfXoXxGG0ogG65wrA4s-y0c_dpcI2AWJrJM9XK8V9yFUUzovno94XbM1BvCKGGa7PtgNfLEHbOVwPriSS9MwAZRL0urawOmUQoUulkQg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"4371e5b8-5216-11ed-8b90-0242ac130002\",\r\n    \"amount\": 4000,\r\n    \"registered\": \"true\",\r\n    \"type\": \"Corporations\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8405/v1.0.0/companies/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8405",
+					"path": [
+						"v1.0.0",
+						"companies",
+						""
+					]
+				},
+				"description": "Проверка работоспособности сервиса"
+			},
+			"response": []
+		},
+		{
+			"name": "companies",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "321",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8405/v1.0.0/companies/49f62c46-5211-11ed-a802-0242ac130002",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8405",
+					"path": [
+						"v1.0.0",
+						"companies",
+						"49f62c46-5211-11ed-a802-0242ac130002"
+					]
+				},
+				"description": "Проверка работоспособности сервиса"
+			},
+			"response": []
+		},
+		{
+			"name": "admin refreshTokens",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIxN2UwZGJlNi04ZDc3LTRkZTUtOWE3ZS1jZjgxMDI4NTg4NmIifQ.eyJleHAiOjE2NjY1MDc0MTMsImlhdCI6MTY2NjUwNTYxMywianRpIjoiZGY1ZWRiYzAtNzY5MC00Njg0LWEwOTYtYjBkMzFkNzVmNmRhIiwiaXNzIjoiaHR0cDovL2hvc3QuZG9ja2VyLmludGVybmFsOjg0MDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiaHR0cDovL2hvc3QuZG9ja2VyLmludGVybmFsOjg0MDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNzJkYTdmOGEtOTQ3OC00NmMzLThiMDAtMzM1N2FhZWNlMzZhIiwidHlwIjoiUmVmcmVzaCIsImF6cCI6ImFkbWluIiwic2Vzc2lvbl9zdGF0ZSI6IjNjMjMxZTBmLWYyMjUtNGM0Ny05NzAxLWZmNmIzZGM2ZTNlZCIsInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjNjMjMxZTBmLWYyMjUtNGM0Ny05NzAxLWZmNmIzZGM2ZTNlZCJ9.EQnP16taNrZttK8gEbMl9YK8Hgw1YzgjIVTPmH1k97A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8400/v1.0.0/api/refresh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8400",
+					"path": [
+						"v1.0.0",
+						"api",
+						"refresh"
+					]
+				},
+				"description": "Проверка работоспособности сервиса"
+			},
+			"response": []
+		}
+	]
+}

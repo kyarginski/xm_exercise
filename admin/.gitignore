@@ -1,0 +1,12 @@
+/.idea/.gitignore
+/.idea/rns_admin.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+.idea/
+/bin/
+*DS_Store
+.pre-commit-config.yaml
+Dockerfile.local
+/admin
+/vendor/

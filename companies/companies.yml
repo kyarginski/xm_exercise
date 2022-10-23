@@ -1,0 +1,29 @@
+﻿#companies.yml
+settings:
+  app_name: companies
+  version_number: v1.0.0
+  run_mode: debug       #debug | release
+
+server:
+  server_address:
+  server_port: 8405
+
+clients_cors:
+  allow_origins: ["http://localhost:8001", "http://localhost:8405"]
+
+keycloak:
+  #  server: http://localhost:8403/
+  server: http://host.docker.internal:8403/
+  realm: master
+  client_secret: fTfnXj5PncEFXZF1A7Y6x37t2LSgJwLs
+  client_id: admin
+
+datasource:
+  server_dialect: postgres
+  server_name: host.docker.internal
+  server_port: 25432
+  db_name: companies
+  user_name: keycloak
+  pwd: password
+#  ssl: sslmode=disabled
+

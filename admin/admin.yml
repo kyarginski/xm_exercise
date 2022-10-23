@@ -1,0 +1,33 @@
+﻿#admin.yml
+settings:
+  app_name: admin
+  version_number: v1.0.0
+  run_mode: release       # debug | release
+
+clients_cors:
+  allow_origins: ["http://localhost:8001", "http://localhost:8405"]
+
+keycloak:
+#  server: http://localhost:8403/
+  server: http://host.docker.internal:8403/
+  realm: master
+  client_secret: fTfnXj5PncEFXZF1A7Y6x37t2LSgJwLs
+  client_id: admin
+
+server:
+  server_address:
+  server_port: 8400
+
+datasource:
+  server_dialect: postgres
+  server_name: ec2-99-80-200-225.eu-west-1.compute.amazonaws.com
+  server_port: 5432
+  db_name: df0rh16friqib0
+  user_name: diiywiwtdmtnnt
+  pwd: ffd9a5800aaae568a7693cdb90e73781f6f4350dca6eb5550d5891de774c8325
+#  ssl: sslmode=disabled
+
+datasets:
+  select-user-id:
+    # -- getting user ID
+    select id from ap_user where lower(login) = ?

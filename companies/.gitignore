@@ -1,0 +1,11 @@
+/.idea/.gitignore
+/.idea/rns_nsi.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+.idea/
+/bin/
+*DS_Store
+.pre-commit-config.yaml
+Dockerfile.local
+/rns_nsi
